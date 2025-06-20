@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/taskRow"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="@dimen/_5sdp"
+    android:layout_marginRight="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_10sdp"
+    android:backgroundTint="@color/white">
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_margin="@dimen/_12sdp">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:backgroundTint="@color/purple"
+            android:button="@drawable/custom_checkbox"
+            android:checked="false"
+            android:background="@android:color/transparent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/taskName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/abel"
+                android:text="Subject Name"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/submissionDate"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/abel"
+                android:text="DOS: 25-Jun-2001"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <View
+        android:visibility="visible"
+        android:id="@+id/horizontalLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:background="@color/purple"
+        app:layout_constraintBottom_toBottomOf="@+id/scheduleRow"
+        />
+
+
+
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "780069504544",
+    "project_id": "college-pulse-ad283",
+    "storage_bucket": "college-pulse-ad283.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780069504544:android:7ab6e746eef1f72e4ede45",
+        "android_client_info": {
+          "package_name": "com.collegetracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780069504544-0m3f0t1oupdvh6g36fao23fblmovrecm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.collegetracker",
+            "certificate_hash": "1f92cdd35b8328f2d213cd4c071114238e0a8054"
+          }
+        },
+        {
+          "client_id": "780069504544-aeghe4ef81pumramn2447me4dh8ak49i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHOUtrUyA4t2ovoze-myPwDSpC3CCHJzE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780069504544-aeghe4ef81pumramn2447me4dh8ak49i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

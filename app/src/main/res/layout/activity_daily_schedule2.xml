@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple"
+    tools:context="Activities.Daily_Schedule">
+
+    <include
+        layout="@layout/schedule_toolbar_layout"
+        android:id="@+id/ScheduleToolbar"/>
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_below="@id/ScheduleToolbar"
+        android:id="@+id/scheduleTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabTextColor="@color/white"
+        app:tabIndicatorColor="@color/white"
+        android:background="@color/purple">
+
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/monday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="M"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tuesday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="T"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/wednesday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="W"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/thursday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="T"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/friday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="F"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/saturday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="S"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/sunday"
+            app:tabBackground="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="S"/>
+
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/scheduleViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/scheduleTabLayout"
+        android:layout_above="@id/bottomNavigation2"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:itemIconTint="@color/bottom_navigation_icon_color"
+        app:itemTextColor="@color/bottom_navigation_icon_color"
+        app:menu="@menu/bottom_navigation_menu"/>
+
+</RelativeLayout>

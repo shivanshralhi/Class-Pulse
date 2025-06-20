@@ -1,0 +1,26 @@
+<!-- bottom_navigation_menu.xml -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/Attendance_btmNavigation"
+        android:title="Attendance"
+        android:icon="@drawable/attendance"
+        />
+
+    <item
+        android:id="@+id/Tasks_btmNavigation"
+        android:title="Assignments"
+        android:icon="@drawable/to_do"
+        android:iconTint="@color/black"
+        />
+
+
+    <item
+        android:id="@+id/Schedule_btmNavigation"
+        android:title="Schedule"
+        android:icon="@drawable/schedule"
+         />
+
+
+
+</menu>

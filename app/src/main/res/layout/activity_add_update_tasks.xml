@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="Activities.AddUpdateTasks"
+    android:background="@color/purple">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:fontFamily="@font/abel"
+            android:gravity="center_horizontal"
+            android:text="Add Assignment"
+            android:textColor="@color/white"
+            android:textColorHint="#404040"
+            android:textSize="@dimen/_25sdp" />
+
+
+        <EditText
+            android:id="@+id/taskName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:background="@drawable/custom_input"
+            android:fontFamily="@font/abel"
+            android:gravity="start"
+            android:hint="Enter Subject"
+            android:inputType="text"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:textColor="#FF404040"
+            android:textColorHint="#404040"
+            android:textSize="@dimen/_20sdp" />
+
+        <TextView
+            android:id="@+id/submissionDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:background="@drawable/custom_input"
+            android:fontFamily="@font/abel"
+            android:gravity="start"
+            android:hint="Submission Date"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:textColor="#FF404040"
+            android:textColorHint="#404040"
+            android:textSize="@dimen/_20sdp" />
+
+        <Spinner
+            android:visibility="gone"
+            android:id="@+id/priority"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_input"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="20dp"
+            />
+
+
+        <EditText
+            android:id="@+id/taskDetails"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:background="@drawable/custom_input"
+            android:fontFamily="@font/abel"
+            android:gravity="start"
+            android:hint="Assignment Details..."
+            android:inputType="text|textMultiLine"
+            android:padding="@dimen/_10sdp"
+            android:textColor="#FF404040"
+            android:textColorHint="#404040"
+            android:textSize="@dimen/_20sdp" />
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/blue"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/abel"
+            android:text="Save"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:textSize="@dimen/_20sdp"/>
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

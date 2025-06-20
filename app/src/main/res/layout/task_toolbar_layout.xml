@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/purple"
+    android:paddingTop="@dimen/_30sdp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Assignment Tracker"
+        android:textSize="@dimen/_20sdp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/allerta_stencil"
+        android:layout_gravity="center_horizontal"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/GoogleCardView"
+        android:layout_width="@dimen/_28sdp"
+        android:layout_height="@dimen/_28sdp"
+        app:cardCornerRadius="@dimen/_100sdp"
+        android:layout_gravity="end"
+        android:backgroundTint="@color/white"
+        android:layout_marginRight="@dimen/_15sdp">
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/google" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.appcompat.widget.Toolbar>

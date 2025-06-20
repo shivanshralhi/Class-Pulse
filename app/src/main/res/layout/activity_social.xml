@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple"
+    tools:context="Activities.SocialActivity"
+    android:padding="24dp">
+
+    <!-- CardView container -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/socialCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="80dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="24dp">
+
+            <!-- App Logo -->
+            <ImageView
+                android:id="@+id/appLogo"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:src="@drawable/logo"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:contentDescription="App Logo" />
+
+            <!-- Follow Text -->
+            <TextView
+                android:id="@+id/followText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Follow us on LinkedIn\nBe a part of our family"
+                android:textAlignment="center"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="@dimen/_40sdp" />
+
+            <Button
+                android:id="@+id/linkedinButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:text="LinkedIn"
+                android:textColor="@android:color/white"
+                android:backgroundTint="#0077B5"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="12dp"
+                android:textSize="@dimen/_20sdp"
+                android:textAllCaps="false"
+                android:layout_marginTop="30dp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple"
+    tools:context="ScheduleFragments.MondayFragment">
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/MondayRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:visibility="visible"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:src="@drawable/floatbutton"
+        android:clickable="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="75dp"
+        android:layout_marginRight="45dp"
+        android:backgroundTint="@color/white"
+        />
+
+</RelativeLayout>
