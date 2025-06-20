@@ -38,6 +38,8 @@ android {
 }
 
 dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
+
     implementation("androidx.core:core:1.12.0")
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -79,11 +81,11 @@ dependencies {
     implementation ("com.mikhaellopez:circularprogressbar:3.1.0")
 
     // Firebase
-    implementation ("com.google.firebase:firebase-auth:23.2.1")
+    implementation ("com.google.firebase:firebase-auth:22.3.1")
     implementation ("com.google.firebase:firebase-core:21.1.1")
-    implementation(platform("com.google.firebase:firebase-bom:33.14.0"))
+    implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
     implementation("com.google.firebase:firebase-firestore:25.1.4")
-    implementation("com.google.android.gms:play-services-auth:21.3.0")
+    implementation("com.google.android.gms:play-services-auth:20.7.0")
 
     // Glide
     implementation ("com.github.bumptech.glide:glide:4.15.1")
