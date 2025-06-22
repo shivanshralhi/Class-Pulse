@@ -37,6 +37,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.collegetracker.R
 import com.collegetracker.databinding.ActivityMainBinding
+import com.google.android.datatransport.runtime.dagger.internal.DoubleCheck.lazy
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -443,16 +444,27 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(resultCode==1233){
-            if(resultCode!= RESULT_OK){
-                println("Somerthing went wrong while updating...")
+        if (requestCode == 1233) {
+            if (resultCode != RESULT_OK) {
+                Log.e("UpdateFlow", "Update failed or canceled.")
             }
         }
 
-        if (requestCode == 888 && resultCode ==  RESULT_OK) {
+        // Google Sign-In
+        if (requestCode == 888) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            val account = task.getResult(ApiException::class.java)
-            googleAuthentication.firebaseAuthWithGoogle(account.idToken!!, this)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                if (account != null && account.idToken != null) {
+                    googleAuthentication.firebaseAuthWithGoogle(account.idToken!!, this)
+                } else {
+                    Toast.makeText(this, "Google Sign-In Failed: No ID Token", Toast.LENGTH_SHORT).show()
+                    Log.e("GoogleSignIn", "No ID token found")
+                }
+            } catch (e: ApiException) {
+                Toast.makeText(this, "Sign-In Failed: ${e.statusCode}", Toast.LENGTH_SHORT).show()
+                Log.e("GoogleSignIn", "API Exception: ${e.message}", e)
+            }
         }
 
     }
