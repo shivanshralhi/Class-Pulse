@@ -137,7 +137,7 @@ class Daily_Schedule : AppCompatActivity() {
 
 
         // Bottom Navigation
-        bottomNavigation2.setSelectedItemId(R.id.Schedule_btmNavigation)
+        bottomNavigation2.selectedItemId = R.id.Schedule_btmNavigation
         bottomNavigation2.setOnItemSelectedListener {
 
             when(it.itemId){

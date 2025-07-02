@@ -75,9 +75,9 @@ class AddUpdateTasks : AppCompatActivity() {
                 isComplete= intent.getBooleanExtra("isComplete", false)
 
                 binding.taskName.setText(name)
-                binding.submissionDate.setText(submissionDate)
+                binding.submissionDate.text = submissionDate
                 binding.taskDetails.setText(details)
-                binding.saveButton.setText("Update Task")
+                binding.saveButton.text = "Update Task"
             }
 
 //            old_task=intent.getSerializableExtra("current_task") as TaskDataClass
@@ -101,7 +101,7 @@ class AddUpdateTasks : AppCompatActivity() {
 
         binding.submissionDate.setOnClickListener {
             showDatePicker(this){ date->
-                binding.submissionDate.setText(date)
+                binding.submissionDate.text = date
             }
 
         }

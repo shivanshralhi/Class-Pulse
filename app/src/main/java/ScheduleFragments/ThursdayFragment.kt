@@ -55,7 +55,7 @@ class ThursdayFragment : Fragment(), ScheduleItemClickListener {
 
         //val arrScheduleThursday = ArrayList<ScheduleModel>()
         val floatingActionButton = view.findViewById<FloatingActionButton>(R.id.floatingActionButton)
-        val vibrator = context?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        val vibrator = context?.getSystemService(VIBRATOR_SERVICE) as Vibrator
 
         arrScheduleThursday = FragmentArrays.arrScheduleThursday
 

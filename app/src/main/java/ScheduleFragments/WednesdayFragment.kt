@@ -55,7 +55,7 @@ class WednesdayFragment : Fragment(), ScheduleItemClickListener {
         attDatabase= DatabaseHelper.getDB(context)!!
 
         val floatingActionButton = view.findViewById<FloatingActionButton>(R.id.floatingActionButton)
-        val vibrator = context?.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        val vibrator = context?.getSystemService(VIBRATOR_SERVICE) as Vibrator
 
         arrScheduleWednesday = FragmentArrays.arrScheduleWednesday
 

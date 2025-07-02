@@ -37,7 +37,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.collegetracker.R
 import com.collegetracker.databinding.ActivityMainBinding
-import com.google.android.datatransport.runtime.dagger.internal.DoubleCheck.lazy
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -64,6 +63,7 @@ import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import kotlin.time.Duration.Companion.seconds
+import kotlin.lazy
 
 class MainActivity : AppCompatActivity() {
 
@@ -252,7 +252,7 @@ class MainActivity : AppCompatActivity() {
             var subjectName: String = ""
             var conductedName: String = "0"
             var attendedName: String = "0"
-            var percentageName: Int = 0;
+            var percentageName: Int = 0
             var percentageString: String = ""
 
 
@@ -367,7 +367,7 @@ class MainActivity : AppCompatActivity() {
 
 
         // Bottom Navigation
-        binding.bottomNavigation.setSelectedItemId(R.id.Attendance_btmNavigation)
+        binding.bottomNavigation.selectedItemId = R.id.Attendance_btmNavigation
         binding.bottomNavigation.setOnItemSelectedListener {
 
             when(it.itemId){
@@ -477,7 +477,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun currentTime(): String? {
+    private fun currentTime(): String {
         val currentDateTime = LocalDateTime.now()
 
         // Format the date and time with the desired pattern (dd-MM HH:mm)

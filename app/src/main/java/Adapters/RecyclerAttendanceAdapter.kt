@@ -166,7 +166,7 @@ class RecyclerAttendanceAdapter(val context: Context,val arrAttendance: ArrayLis
         }
     }
 
-    private fun currentTime(): String? {
+    private fun currentTime(): String {
         val currentDateTime = LocalDateTime.now()
 
         // Format the date and time with the desired pattern (dd-MM HH:mm)

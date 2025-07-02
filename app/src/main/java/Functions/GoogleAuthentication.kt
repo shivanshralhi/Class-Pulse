@@ -76,7 +76,7 @@ class GoogleAuthentication(context: Context) {
                     Toast.makeText(context, "Signed in Successfully", Toast.LENGTH_LONG).show()
                     val intent = Intent(context, MainActivity::class.java)
                     context.startActivity(intent)
-                    (context as Activity).finish()
+                    context.finish()
                 } else {
                     Toast.makeText(context, "Some Error Occurred", Toast.LENGTH_LONG).show()
                     Log.d("CollegeTracker", task.exception?.localizedMessage ?: "Unknown error")

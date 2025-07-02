@@ -68,15 +68,15 @@ class add_update_activity : AppCompatActivity() {
         binding.subjectName.setText(subjectName)
         binding.conductedEt.setText(conducted)
         binding.attendedEt.setText(attended)
-        binding.percentage.setText(percentage)
-        binding.lastUpdated.setText("Last Updated: $lastUpdated")
-        binding.requirementEt.setText(requirement)
+        binding.percentage.text = percentage
+        binding.lastUpdated.text = "Last Updated: $lastUpdated"
+        binding.requirementEt.text = requirement
 
         if(conducted!=null && attended!=null){
 
             var tempConducted= conducted.toInt()
             var tempAttended= attended.toInt()
-            var tempRequirement= requirement?.replace("%","")?.toInt()
+            var tempRequirement= requirement.replace("%","")?.toInt()
 
 
             //CASSES REQUIRED CALCULATION
@@ -84,62 +84,62 @@ class add_update_activity : AppCompatActivity() {
 
 
             binding.minusConducted.setOnClickListener {
-                vibrator?.vibrate(50)
+                vibrator.vibrate(50)
                 tempConducted--
                 binding.conductedEt.setText(tempConducted.toString())
                 percentage=(((tempAttended.toDouble()/tempConducted.toDouble())*100).toInt()).toString()+"%"
-                binding.percentage.setText(percentage)
+                binding.percentage.text = percentage
 
                 //CASSES REQUIRED CALCULATION
                 classesRequired(tempConducted.toString(), tempAttended.toString(), percentage ,tempRequirement.toString())
             }
 
             binding.plusConducted.setOnClickListener {
-                vibrator?.vibrate(50)
+                vibrator.vibrate(50)
                 tempConducted++
                 binding.conductedEt.setText(tempConducted.toString())
                 percentage=(((tempAttended.toDouble()/tempConducted.toDouble())*100).toInt()).toString()+"%"
-                binding.percentage.setText(percentage)
+                binding.percentage.text = percentage
 
                 //CASSES REQUIRED CALCULATION
                 classesRequired(tempConducted.toString(), tempAttended.toString(), percentage ,tempRequirement.toString())
             }
 
             binding.minusAttended.setOnClickListener {
-                vibrator?.vibrate(50)
+                vibrator.vibrate(50)
                 tempAttended--
                 binding.attendedEt.setText(tempAttended.toString())
                 percentage=(((tempAttended.toDouble()/tempConducted.toDouble())*100).toInt()).toString()+"%"
-                binding.percentage.setText(percentage)
+                binding.percentage.text = percentage
 
                 //CASSES REQUIRED CALCULATION
                 classesRequired(tempConducted.toString(), tempAttended.toString(), percentage ,tempRequirement.toString())
             }
 
             binding.plusAttended.setOnClickListener {
-                vibrator?.vibrate(50)
+                vibrator.vibrate(50)
                 tempAttended++
                 binding.attendedEt.setText(tempAttended.toString())
                 percentage=(((tempAttended.toDouble()/tempConducted.toDouble())*100).toInt()).toString()+"%"
-                binding.percentage.setText(percentage)
+                binding.percentage.text = percentage
 
                 //CASSES REQUIRED CALCULATION
                 classesRequired(tempConducted.toString(), tempAttended.toString(), percentage ,tempRequirement.toString())
             }
 
             binding.minusRequirement.setOnClickListener {
-                vibrator?.vibrate(50)
+                vibrator.vibrate(50)
                 tempRequirement= tempRequirement?.minus(5)
-                binding.requirementEt.setText("$tempRequirement%")
+                binding.requirementEt.text = "$tempRequirement%"
 
                 //CASSES REQUIRED CALCULATION
                 classesRequired(tempConducted.toString(), tempAttended.toString(), percentage ,tempRequirement.toString())
             }
 
             binding.plusRequirement.setOnClickListener {
-                vibrator?.vibrate(50)
+                vibrator.vibrate(50)
                 tempRequirement= tempRequirement?.plus(5)
-                binding.requirementEt.setText("$tempRequirement%")
+                binding.requirementEt.text = "$tempRequirement%"
 
                 //CASSES REQUIRED CALCULATION
                 classesRequired(tempConducted.toString(), tempAttended.toString(), percentage ,tempRequirement.toString())
@@ -189,7 +189,7 @@ class add_update_activity : AppCompatActivity() {
         //ON BACK-PRESSES
         val onBackPressedCallback = object : OnBackPressedCallback(true /* enabled by default */) {
             override fun handleOnBackPressed() {
-                vibrator?.vibrate(50)
+                vibrator.vibrate(50)
                 startActivity(Intent(this@add_update_activity, MainActivity::class.java))
                 finish()
             }
@@ -203,33 +203,33 @@ class add_update_activity : AppCompatActivity() {
         val requirementInt= requirement.replace("%","").toDouble()
         val percentageInt= percentage.replace("%", "").toDouble()
 
-        var classesRequired=0;
+        var classesRequired=0
         if(percentageInt < requirementInt){
             classesRequired= Math.ceil((( requirementInt * conductedInt) - (100.0 * attendedInt))/(100.0- requirementInt)).toInt()
 
-            binding.classesRequired.setText(classesRequired.toString())
-            binding.classesRequiredStatus.setText("Classes Needed")
+            binding.classesRequired.text = classesRequired.toString()
+            binding.classesRequiredStatus.text = "Classes Needed"
 
-            binding.classesRequiredCardview.setCardBackgroundColor(getResources().getColor(R.color.light_red));
+            binding.classesRequiredCardview.setCardBackgroundColor(resources.getColor(R.color.light_red))
 
         }
         else if(percentageInt > requirementInt){
 
             classesRequired=Math.floor(((100 * attendedInt)-(requirementInt * conductedInt))/requirementInt).toInt()
-            binding.classesRequired.setText(classesRequired.toString())
-            binding.classesRequiredStatus.setText("Classes can be Missed")
+            binding.classesRequired.text = classesRequired.toString()
+            binding.classesRequiredStatus.text = "Classes can be Missed"
 
-            binding.classesRequiredCardview.setCardBackgroundColor(getResources().getColor(R.color.light_green));
+            binding.classesRequiredCardview.setCardBackgroundColor(resources.getColor(R.color.light_green))
 
 
         }
         else if(percentageInt == requirementInt){
-            binding.classesRequired.setText("0")
-            binding.classesRequiredStatus.setText("Classes can be Missed")
+            binding.classesRequired.text = "0"
+            binding.classesRequiredStatus.text = "Classes can be Missed"
         }
 
         if(classesRequired>=1000){
-            binding.classesRequired.setText("♾")
+            binding.classesRequired.text = "♾"
         }
 
     }

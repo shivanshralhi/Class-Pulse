@@ -107,7 +107,7 @@ class TaskActivity : AppCompatActivity(){
 
 
         // Bottom Navigation
-        binding.bottomNavigation.setSelectedItemId(R.id.Tasks_btmNavigation)
+        binding.bottomNavigation.selectedItemId = R.id.Tasks_btmNavigation
         binding.bottomNavigation.setOnItemSelectedListener {
 
             when(it.itemId){

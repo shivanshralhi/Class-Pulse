@@ -49,7 +49,7 @@ class ForNewUser(context: Context) {
 
     }
 
-    private fun currentTime(): String? {
+    private fun currentTime(): String {
         val currentDateTime = LocalDateTime.now()
 
         // Format the date and time with the desired pattern (dd-MM HH:mm)
